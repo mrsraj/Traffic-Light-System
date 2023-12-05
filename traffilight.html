@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trafficLight</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            height: 60%;
+            background-color: aliceblue;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .traffic {
+            border-radius: 50%;
+            height: 300px;
+            width: 300px;
+            /* background-color: green; */
+        }
+
+        .btn {
+            text-align: center;
+        }
+
+        button {
+            font-size: 25px;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            background-color: aquamarine;
+            color: black;
+        }
+
+        .symbol {
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <p class="traffic" id="light"></p>
+    </div>
+
+    <div class="symbol">
+        <p id="symbol"></p>
+    </div>
+
+    <div class="btn">
+        <button onclick="start()">Start Light</button>
+        <button onclick="clearInterval(stop1)">Stop Light</button>
+    </div>
+
+</body>
+
+<script>
+
+    let i = 0;
+    let arr = ['red', 'yellow', 'green'];
+    let arr1 = ['Stop', 'Slow', 'Go'];
+
+    function start() {
+        var stop1 = setInterval(setTime, 5000);
+    }
+    function setTime() {
+        if (i < 3) {
+            document.getElementById('light').style.background = arr[i];
+            document.getElementById('symbol').innerHTML = arr1[i];
+            i = i + 1;
+        }
+        else {
+            i = 0;
+        }
+    }
+</script>
+
+</html>
