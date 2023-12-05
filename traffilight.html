@@ -62,7 +62,6 @@
     </div>
 
     <div class="btn">
-        <button onclick="start()">Start Light</button>
         <button onclick="clearInterval(stop1)">Stop Light</button>
     </div>
 
@@ -74,9 +73,9 @@
     let arr = ['red', 'yellow', 'green'];
     let arr1 = ['Stop', 'Slow', 'Go'];
 
-    function start() {
-        var stop1 = setInterval(setTime, 5000);
-    }
+    
+    var stop1 = setInterval(setTime, 5000);
+    
     function setTime() {
         if (i < 3) {
             document.getElementById('light').style.background = arr[i];
